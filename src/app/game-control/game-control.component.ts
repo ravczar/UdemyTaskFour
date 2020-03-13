@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class GameControlComponent implements OnInit {
   @Output() countObject = new EventEmitter<{index:number, type:string}>();
   index:number=null;
+  previous:number = null;
   timer:any;
 
   constructor() { }
@@ -23,14 +24,14 @@ export class GameControlComponent implements OnInit {
     clearInterval(this.timer);
   }
 
-  ngDoCheck(){
-    if( this.index > 0){
+  ngDoCheck(){ 
+    if( this.index > 0 && this.previous < this.index){
       this.countObject.emit({
         index:this.index,
         type:this.index%2==0 ? 'even' : 'odd'
       });
-    }
-    
+    this.previous= this.index;
+    }  
   }
 
 }

@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  numberReceived: {index:number, type:string};
+  numbersReceived:Array <{index:number, type:string}> = new Array();
 
   ngOnInit():void{
-    this.numberReceived = {index: 0, type:'even'};
+    this.numbersReceived.push({index: 0, type:'even'});
   }
 
   receivedCountObject(receivedCount: {index:number, type:string}){
-    this.numberReceived = receivedCount;
+    this.numbersReceived.push(receivedCount);
   }
 }

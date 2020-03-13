@@ -8,15 +8,11 @@
   <div class="row lists">
     <div class="col-md-6">
       <h2>Odd list:</h2>
-      <app-odd></app-odd>
+      <app-odd *ngFor="let numberReceived of numbersReceived" [oddNumber]='numberReceived'></app-odd>
     </div>
     <div class="col-md-6">
       <h2>Even list:</h2>
-      <app-even></app-even>
+      <app-even *ngFor="let numberReceived of numbersReceived" [evenNumber]='numberReceived'></app-even>
     </div>
   </div>
-</div>
-
-<div *ngIf="numberReceived.index">
-  {{numberReceived.index}} {{numberReceived.type}}
 </div>

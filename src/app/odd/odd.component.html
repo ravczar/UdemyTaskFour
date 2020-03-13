@@ -1,3 +1,4 @@
-<div class="bg-warning">
-    <p class="oddNumber">Odd: {{oddNumber}}</p>
+<div class="bg-warning oddWrapper" *ngIf="oddNumber != null && oddNumber.type == 'odd'">
+    <p class="index">Index: {{oddNumber.index}}</p>
+    <p class="type">Type: {{oddNumber.type}}</p>
 </div>
