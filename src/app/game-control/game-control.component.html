@@ -1,7 +1,11 @@
-<div class="container bg-primary">
-    <div class="row">
-        <p>Game controll Module</p>
-        <button class="btn btn-success col-md-6">Start</button>
-        <button class="btn btn-danger col-md-6">Stop</button>
-    </div>
+<div class="bg-primary"> 
+    <p class="title">Game controll Module</p>
+    <button 
+        class="btn btn-success col-md-2"
+        (click)="startTimer()">Start</button>
+    <button 
+        class="btn btn-danger col-md-2"
+        (click)="stopTimer()">Stop</button>
+    <div>index: {{index}}</div>
+    <div>typ: {{(index != null) && (index%2 == 0 ? 'even' : 'odd')}}</div>
 </div>

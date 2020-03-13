@@ -1,14 +1,22 @@
 <div class="container">
   <h1>Task Four: 3 components. Start-stop</h1>
-  <div class="row">
-    <app-game-control></app-game-control>
+  <div class="row controlls"> 
+      <app-game-control 
+        class="col"
+        (countObject)="receivedCountObject($event)"></app-game-control>
   </div>  
-  <div class="row">
+  <div class="row lists">
     <div class="col-md-6">
+      <h2>Odd list:</h2>
       <app-odd></app-odd>
     </div>
     <div class="col-md-6">
+      <h2>Even list:</h2>
       <app-even></app-even>
     </div>
   </div>
+</div>
+
+<div *ngIf="numberReceived.index">
+  {{numberReceived.index}} {{numberReceived.type}}
 </div>

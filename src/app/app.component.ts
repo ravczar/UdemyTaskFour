@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TaskFour';
+  numberReceived: {index:number, type:string};
+
+  ngOnInit():void{
+    this.numberReceived = {index: 0, type:'even'};
+  }
+
+  receivedCountObject(receivedCount: {index:number, type:string}){
+    this.numberReceived = receivedCount;
+  }
 }
